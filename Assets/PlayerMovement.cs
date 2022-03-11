@@ -4,43 +4,51 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    bool canJump = true;
+    public Rigidbody rb;
+    public static int movespeed = 10;
+    public static int backwards = -10;
+    public Vector3 userDirection = Vector3.right;
+    public bool canJump = false;
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
     }
 
+    
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += Vector3.left * 10 * Time.deltaTime;
+            transform.Rotate(new Vector3(0, -1, 0));
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += Vector3.right * 10 * Time.deltaTime;
+            transform.Rotate(new Vector3(0, 1, 0));
         }
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += Vector3.forward * 10 * Time.deltaTime;
+            transform.Translate(userDirection * movespeed * Time.deltaTime);
+            
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position += Vector3.back * 10 * Time.deltaTime;
+            transform.Translate(userDirection * backwards * Time.deltaTime);
         }
-        if (Input.GetKeyDown(KeyCode.Space) && canJump == true)
+        if (canJump == true && Input.GetKeyDown(KeyCode.Space))
         {
-            GetComponent<Rigidbody>().AddForce(new Vector3(0, 200, 0));
-            canJump = false;
+            rb.velocity = new Vector3(rb.velocity.x, 10, 0);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         canJump = true;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        canJump = false;
     }
 }
