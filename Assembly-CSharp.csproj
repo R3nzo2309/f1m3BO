@@ -58,6 +58,8 @@
   <ItemGroup>
     <Compile Include="Assets\PlayerMovement.cs" />
     <Compile Include="Assets\bulletcode.cs" />
+    <Compile Include="Assets\Animtor.cs" />
+    <Compile Include="Assets\animator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

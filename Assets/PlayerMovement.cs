@@ -30,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(userDirection * movespeed * Time.deltaTime);
-            
         }
         if (Input.GetKey(KeyCode.S))
         {
