@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class bulletcode : MonoBehaviour
 {
-    
+    public object bullet;
     public float bulletspeed = 20;
+    private bool clicked = false;
+    public Transform playerTransform;
+    private bool hallo = true;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +22,13 @@ public class bulletcode : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.E))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * bulletspeed);
+            clicked = true;
+
+
+        }
+        if (clicked)
+        {
+            transform.Translate(playerTransform.forward * Time.deltaTime * bulletspeed);
         }
     }
 }
