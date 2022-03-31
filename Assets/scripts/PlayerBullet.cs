@@ -9,6 +9,7 @@ public class PlayerBullet : MonoBehaviour
     public static int movespeed = 10;
     public static int backwards = -10;
     public Vector3 userDirection = Vector3.right;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class PlayerBullet : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(bullet, new Vector3(1, 1, 1), Quaternion.identity);
+            Instantiate(bullet, transform.position, transform.rotation);
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -39,7 +40,6 @@ public class PlayerBullet : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             transform.Translate(userDirection * backwards * Time.deltaTime);
-        }
-        
+        }   
     }
 }

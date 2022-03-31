@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Threading;
+
 
 public class bulletcode : MonoBehaviour
 {
     public float bulletspeed = 40;
     private bool clicked = false;
     public Transform playerTransform;
-    private bool hallo = true;
-    int teller = 0;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -30,19 +29,10 @@ public class bulletcode : MonoBehaviour
             transform.Translate(playerTransform.forward * Time.deltaTime * bulletspeed);
         }
 
-        while (true)
-        {
-            if (teller == 10)
-            {
-                Destroy(gameObject);
-                teller = 0;
-            }
-            Thread.Sleep(1000);
-            teller++;
-        }
+        Destroy(gameObject, 2);
 
-        
-        
+
+
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -52,4 +42,5 @@ public class bulletcode : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
 }
