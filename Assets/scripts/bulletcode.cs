@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class bulletcode : MonoBehaviour
 {
-    public object bullet;
-    public float bulletspeed = 20;
+    public float bulletspeed = 40;
     private bool clicked = false;
     public Transform playerTransform;
     private bool hallo = true;
+    
 
 
     // Start is called before the first frame update
@@ -20,15 +20,27 @@ public class bulletcode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.Space))
         {
             clicked = true;
-
-
         }
+
         if (clicked)
         {
-            transform.Translate(playerTransform.forward * Time.deltaTime * bulletspeed);
+            transform.Translate(Vector3.forward * Time.deltaTime * bulletspeed);
+            
+        }
+        Destroy(gameObject, 2);
+
+        
+        
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject)
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
     }
 }
