@@ -26,8 +26,10 @@ public class bulletcode : MonoBehaviour
 
         if (clicked)
         {
-            transform.Translate(playerTransform.forward * Time.deltaTime * bulletspeed);
+            transform.Translate(Vector3.forward * Time.deltaTime * bulletspeed);
+            
         }
+        Destroy(gameObject, 2);
 
         Destroy(gameObject, 2);
 

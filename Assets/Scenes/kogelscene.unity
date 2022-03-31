@@ -521,4 +521,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+<<<<<<< HEAD
   m_LocalEulerAnglesHint: {x: 0, y: 20, z: 0}
+=======
+  m_LocalEulerAnglesHint: {x: 0, y: 20, z: 0}
+>>>>>>> 44d07189bb384d6819603e2c2a29c7b8b071e29e
