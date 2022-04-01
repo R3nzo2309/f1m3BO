@@ -57,12 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\scripts\bulletcode.cs" />
+    <Compile Include="Assets\scripts\CodeForFireObject.cs" />
     <Compile Include="Assets\scripts\Animtor.cs" />
     <Compile Include="Assets\scripts\animator.cs" />
-    <Compile Include="Assets\scripts\PlayerBullet.cs" />
     <Compile Include="Assets\scripts\CodeForKogel.cs" />
-    <Compile Include="Assets\scripts\CodeForFireObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
