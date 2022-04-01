@@ -32,16 +32,7 @@ public class bulletcode : MonoBehaviour
         }
         Destroy(gameObject, 2);
 
-        while (true)
-        {
-            if (teller == 10)
-            {
-                Destroy(gameObject);
-                teller = 0;
-            }
-            Thread.Sleep(1000);
-            teller++;
-        }
+       
 
         
         
