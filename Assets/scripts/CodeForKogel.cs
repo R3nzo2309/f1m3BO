@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class bulletcode : MonoBehaviour
+public class CodeForKogel : MonoBehaviour
 {
     public float bulletspeed = 40;
     private bool clicked = false;
     public Transform playerTransform;
-   
+    public Vector3 userDirection = Vector3.right;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -26,8 +27,8 @@ public class bulletcode : MonoBehaviour
 
         if (clicked)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * bulletspeed);
-            
+            transform.Translate(userDirection * bulletspeed * Time.deltaTime);
+
         }
         Destroy(gameObject, 2);
 
@@ -42,5 +43,5 @@ public class bulletcode : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
 }
