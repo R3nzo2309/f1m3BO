@@ -110,4 +110,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletspeed: 20
   playerTransform: {fileID: 1853717112162395017}
-  bullet: {fileID: 1853717112162395026}

@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Threading;
+
 
 public class bulletcode : MonoBehaviour
 {
     public float bulletspeed = 40;
     private bool clicked = false;
     public Transform playerTransform;
-    private bool hallo = true;
-    int teller = 0;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -34,8 +33,6 @@ public class bulletcode : MonoBehaviour
 
        
 
-        
-        
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -45,4 +42,5 @@ public class bulletcode : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
 }
