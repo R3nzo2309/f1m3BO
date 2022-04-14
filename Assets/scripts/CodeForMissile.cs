@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CodeForMissile : MonoBehaviour
 {
-    public float speed = 4.0f;
-    public Transform Follow;
+    public float speed = 10.0f;
+    public Transform follow;
     private bool clicked = false;
     public Transform playerTransform;
     public Vector3 userDirection = Vector3.right;
@@ -15,7 +15,7 @@ public class CodeForMissile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        follow = GameObject.Find("Sphere").transform;
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class CodeForMissile : MonoBehaviour
 
         if (clicked)
         {
-            transform.position = Vector3.MoveTowards(transform.position, Follow.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, follow.position, speed * Time.deltaTime);
 
         }
         Destroy(gameObject, 2);
