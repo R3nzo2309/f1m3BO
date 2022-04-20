@@ -32,10 +32,9 @@ public class CodeForMissile : MonoBehaviour
 
         }
         Destroy(gameObject, 2);
-
-
-
     }
+
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject)
